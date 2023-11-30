@@ -17,7 +17,7 @@ app.get('/', rootHandler);
 app.get('/location', locationHandler);
 app.get('/yelp', restaurantHandler);
 app.get('/weather', weatherHandler);
-app.get('/animal', animalHandler);
+// app.get('/animal', animalHandler);
 app.use('*', notFoundHandler);
 app.use(errorHandler);
 
