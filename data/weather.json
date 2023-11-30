@@ -1,0 +1,44 @@
+{
+  "coord": {
+    "lon": -78.543,
+    "lat": 38.123
+  },
+  "weather": [
+    {
+      "id": 800,
+      "main": "Clear",
+      "description": "clear sky",
+      "icon": "01n"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 51.46,
+    "feels_like": 50.31,
+    "temp_min": 44.51,
+    "temp_max": 57.81,
+    "pressure": 1015,
+    "humidity": 85
+  },
+  "visibility": 10000,
+  "wind": {
+    "speed": 2.48,
+    "deg": 127,
+    "gust": 2.33
+  },
+  "clouds": {
+    "all": 0
+  },
+  "dt": 1699502510,
+  "sys": {
+    "type": 2,
+    "id": 2021352,
+    "country": "US",
+    "sunrise": 1699444039,
+    "sunset": 1699481312
+  },
+  "timezone": -18000,
+  "id": 4755668,
+  "name": "Deerwood",
+  "cod": 200
+}
