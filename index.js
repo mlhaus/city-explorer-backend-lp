@@ -17,7 +17,7 @@ app.get('/', rootHandler);
 app.get('/location', locationHandler);
 app.get('/yelp', restaurantHandler);
 app.get('/weather', weatherHandler);
-// app.get('/animal', animalHandler);
+app.get('/animal', animalHandler);
 app.use('*', notFoundHandler);
 app.use(errorHandler);
 
@@ -88,32 +88,33 @@ function restaurantHandler(request, response) {
 }
 
 function animalHandler(request, response) {
-    const client = new petfinder.Client({apiKey: process.env.PETFINDER_API, secret: process.env.PETFINDER_SECRET});
-    let animals;
-
-    client.animal.search({
-        type: "Dog",
-        location: "41.90979292568401, -91.65074901204449",
-        page: 1,
-        limit: 5,
-    })
-        .then(function (response) {
-            // response.data.animals.forEach(function(animal) {
-                // console.log(` -- ${animal.name}\nid: ${animal.id}\nurl: ${animal.url}\n`);
-            // });
-            animals = response.data.animals;
-        })
-        .then(function() {
-            animals.forEach(animal => {
-                client.animal.show(animal.id)
-                    .then(resp => {
-                        console.log(resp.data.animal);
-                    });
-            })
-        })
-        .catch(function (error) {
-            // Handle the error
-        });
+    response.status(200).send('I love cats!');
+    // const client = new petfinder.Client({apiKey: process.env.PETFINDER_API, secret: process.env.PETFINDER_SECRET});
+    // let animals;
+    //
+    // client.animal.search({
+    //     type: "Dog",
+    //     location: "41.90979292568401, -91.65074901204449",
+    //     page: 1,
+    //     limit: 5,
+    // })
+    //     .then(function (response) {
+    //         // response.data.animals.forEach(function(animal) {
+    //             // console.log(` -- ${animal.name}\nid: ${animal.id}\nurl: ${animal.url}\n`);
+    //         // });
+    //         animals = response.data.animals;
+    //     })
+    //     .then(function() {
+    //         animals.forEach(animal => {
+    //             client.animal.show(animal.id)
+    //                 .then(resp => {
+    //                     console.log(resp.data.animal);
+    //                 });
+    //         })
+    //     })
+    //     .catch(function (error) {
+    //         // Handle the error
+    //     });
 
     // const url = 'https://api.petfinder.com/v2/oauth2/token';
     // superagent.post(url)
